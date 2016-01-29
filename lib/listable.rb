@@ -1,6 +1,5 @@
 module Listable
-  # Listable methods go here
-	
+  # Listable methods go here	
 	def format_description(description)
 		"#{description}".ljust(30)
   end
@@ -19,6 +18,12 @@ module Listable
 		end
 	end
 	def format_priority(priority)
+	  valid_priority = ["high", "medium", "low"]
+		if !priority		
+		elsif valid_priority.include?(priority) == false 
+			raise UdaciListErrors::InvalidPriorityValue, "'#{priority}' is not a valid priority." 		
+		end
+	
 		value = " Priority_3" if priority == "high"
     value = " Priority_2" if priority == "medium"
     value = " Priority_1" if priority == "low"

@@ -18,8 +18,9 @@ class UdaciList
     @items.push EventItem.new(description, options) if type == "event"
     @items.push LinkItem.new(description, options) if type == "link"
   end
-  def delete(index)
-    @items.delete_at(index - 1)
+  def delete(index)		 
+		raise IndexExceedsListSize, "'#{index}' is not a valid index." if index > @items.size			
+		@items.delete_at(index - 1)		
   end
   def all
     puts "-" * @title.length
