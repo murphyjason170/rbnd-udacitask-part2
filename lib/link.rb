@@ -3,7 +3,7 @@ class LinkItem
   attr_reader :description, :site_name
 
   def initialize(url, options={})
-    @description = url
+		@description = url
     @site_name = options[:site_name]
   end
   def format_name
