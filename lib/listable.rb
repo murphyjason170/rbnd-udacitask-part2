@@ -23,10 +23,10 @@ module Listable
 		elsif valid_priority.include?(priority) == false 
 			raise UdaciListErrors::InvalidPriorityValue, "'#{priority}' is not a valid priority." 		
 		else	
-			value = " Priority_3" if priority == "high"
-			value = " Priority_2" if priority == "medium"
-			value = " Priority_1" if priority == "low"
-			value = " Priority_0" if !priority
+			value = "3" if priority == "high"
+			value = "2" if priority == "medium"
+			value = "1" if priority == "low"
+			value = "0" if !priority
 			return value
 		end
   end

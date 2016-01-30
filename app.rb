@@ -47,3 +47,10 @@ new_list.all
 # ------------------------
 new_list.filter("event")
 
+# Feature 1: Professional Looking Table
+new_list.all_professional_looking_table
+
+
+
+
+

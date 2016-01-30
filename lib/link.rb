@@ -11,8 +11,15 @@ class LinkItem
     @site_name ? @site_name : ""
   end
   def details
-    format_description(@description) + 
+    "Description: " + format_description(@description) + 
 		"Type: " + @type + " " +
 		"Site Name: " + format_name
   end
+	def details_for_table
+		return {description: format_description(@description).to_s,
+						type:	@type,
+						site_name: format_name.to_s
+					 }			
+	end
+
 end

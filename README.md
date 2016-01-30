@@ -16,19 +16,19 @@ As projects get larger, and more complex, scalability and organization can becom
 
 You should have completed all the necessary steps for finishing this project in Udacitask 2.0. Before submitting, ensure your program returns the correct values for all the sample code provided in app.rb, and meets the following requirements.
 
-* **The Basics**: add, delete, and all methods are written and functional. All code in app.rb returns expected output.
-* **Errors**: `InvalidItemType`, `IndexExceedsListSize`, and `InvalidPriorityValue` are used appropriately.
-* **Modules**: Formatting methods are in a module and included as a mixin. Error classes are organized in modules and called using the `::` operator.
+* **The Basics**: add, delete, and all methods are written and functional. All code in app.rb returns expected output. - DONE 
+* **Errors**: `InvalidItemType`, `IndexExceedsListSize`, and `InvalidPriorityValue` are used appropriately.  - DONE 
+* **Modules**: Formatting methods are in a module and included as a mixin. Error classes are organized in modules and called using the `::` operator. - DONE
 * **Gems**: A **minimum of 3 gems** (you can use more!) are used in the project. `Gemfile` and `Gemfile.lock` are updated appropriately.
-    * **Chronic**: Use the Chronic gem to parse dates such as “In 5 weeks”
-    * **Colorize**: Use the Colorize gem to colorize the priority to-do symbols ⇩⇨⇧
-    * ***Gem of your choice***: [Find a gem of your choice](https://rubygems.org/) and incorporate it into Udacitask 2.0. You can check out [this site](http://www.awesomecommandlineapps.com/gems.html) for suggestions on gems for command-line apps.
-* **Additional features**:
-    * Each item should display its item type along with the item description.
-    * Write a method `list.filter(item_type)` that takes an `item_type` as input and returns only list items of that type if they exist, or alerts the user if there aren't any items of that type.
+    * **Chronic**: Use the Chronic gem to parse dates such as “In 5 weeks” - DONE
+    * **Colorize**: Use the Colorize gem to colorize the priority to-do symbols ⇩⇨⇧ - DONE
+    * ***Gem of your choice***: [Find a gem of your choice](https://rubygems.org/) and incorporate it into Udacitask 2.0. You can check out [this site](http://www.awesomecommandlineapps.com/gems.html) for suggestions on gems for command-line apps. - DONE			
+		* **Additional features**:
+    * Each item should display its item type along with the item description. - DONE
+    * Write a method `list.filter(item_type)` that takes an `item_type` as input and returns only list items of that type if they exist, or alerts the user if there aren't any items of that type. - DONE
     * ***In addition to the two features listed above, add 2 more features of your choice***: If you get stuck deciding on a new feature, here are some suggestions:
         * Creating a new item type
-        * Using your third gem in an interesting way
+        * Using your third gem in an interesting way - DONE (used terminal-table gem)
         * Allow deletion of multiple items
         * Change the priority levels of items
 * **Reflections.txt:** Describe how you used the **gem of your choice**, and the **two additional features** you added to Udacitask 2.0.
