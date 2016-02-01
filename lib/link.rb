@@ -16,10 +16,7 @@ class LinkItem
 		"Site Name: " + format_name
   end
 	def details_for_table
-		return {description: format_description(@description).to_s,
-						type:	@type,
-						site_name: format_name.to_s
-					 }			
+		return {description: format_description(@description).to_s, type:	@type, site_name: format_name.to_s}			
 	end
 
 end

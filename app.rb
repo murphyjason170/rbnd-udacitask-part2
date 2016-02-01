@@ -51,8 +51,7 @@ new_list.filter("event")
 # Feature 1: Professional Looking Table using terminal-table gem
 new_list.all_professional_looking_table
 
-# Feature 2: Table written to spreadsheet using spreadsheet gem
-new_list.write_table_to_spreadsheet
+# Feature 2: Filter by Priority
 new_list.filter_by_priority("high")
 
 

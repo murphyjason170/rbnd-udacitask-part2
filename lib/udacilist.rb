@@ -22,18 +22,16 @@ require 'colorize'
 		raise UdaciListErrors::IndexExceedsListSize, "'#{index}' is not a valid index." if index > @items.size			
 		@items.delete_at(index - 1)		
   end
-  def all	
-    puts "-" * @title.length
-    puts @title
-    puts "-" * @title.length
-		@items.each_with_index do |item, position|
-			puts "#{position + 1}) #{item.details}" 
-		end
-	end
 	def title_printer
     puts "-" * @title.length
     puts @title
     puts "-" * @title.length	
+	end  
+	def all	
+		title_printer
+		@items.each_with_index do |item, position|
+			puts "#{position + 1}) #{item.details}" 
+		end
 	end
 	def filter(item_type)
 		title_printer
@@ -43,11 +41,11 @@ require 'colorize'
 	end
 	def filter_by_priority(user_specified_priority)
 		title_printer
-		priority = "3" if user_specified_priority == "high"
-		priority = "2" if user_specified_priority == "medium"
-		priority = "1" if user_specified_priority == "low"
+		priority = "P3" if user_specified_priority == "high"
+		priority = "P2" if user_specified_priority == "medium"
+		priority = "P1" if user_specified_priority == "low"
 		@items.each_with_index do |item, position|
-			puts "#{position + 1}) #{item.details}" if (item.details).match("Priority: #{priority}")
+			puts "#{position + 1}) #{item.details}" if (item.details).match("#{priority}")
 		end
 	end
   def all_professional_looking_table				
@@ -56,9 +54,9 @@ require 'colorize'
 		table = Terminal::Table.new :title => @title.colorize(:cyan), :rows => rows		
 		@items.each_with_index do |item, position|
 			row_hash = item.details_for_table
-			priority_color = "red" if row_hash[:priority] == "3"
-			priority_color = "magenta" if row_hash[:priority] == "2"
-			priority_color = "blue" if row_hash[:priority] == "1"			
+			priority_color = "red" if row_hash[:priority] == "P3"
+			priority_color = "magenta" if row_hash[:priority] == "P2"
+			priority_color = "blue" if row_hash[:priority] == "P1"			
 			rows << [(position + 1).to_s.colorize(:magenta), row_hash[:description].colorize(:green), row_hash[:type].colorize(:cyan), (row_hash[:event_dates].to_s.colorize(:magenta) || row_hash[:due].to_s.colorize(:magenta)),row_hash[:priority].to_s.colorize(priority_color.to_s),row_hash[:site_name].to_s.colorize(:green)]			
 		end
 		table.headings = ['Item #', 'Description', 'Type', 'Dates', 'Priority', 'Site Name']
