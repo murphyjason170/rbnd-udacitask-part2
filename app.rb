@@ -20,6 +20,7 @@ list.add("event", "Vacation", start_date: "2016-05-28", end_date: "2016-05-31")
 list.add("link", "https://github.com", site_name: "GitHub Homepage")
 list.delete(3)
 list.all
+list.all_professional_looking_table
 
 # SHOULD CREATE AN UNTITLED LIST AND ADD ITEMS TO IT
 # --------------------------------------------------
@@ -47,9 +48,12 @@ new_list.all
 # ------------------------
 new_list.filter("event")
 
-# Feature 1: Professional Looking Table
+# Feature 1: Professional Looking Table using terminal-table gem
 new_list.all_professional_looking_table
 
+# Feature 2: Table written to spreadsheet using spreadsheet gem
+new_list.write_table_to_spreadsheet
+new_list.filter_by_priority("high")
 
 
 

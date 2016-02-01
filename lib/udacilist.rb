@@ -1,7 +1,6 @@
 class UdaciList	
 require 'terminal-table'
 require 'colorize'
-
   attr_reader :title, :items
 
   def initialize(options={})
@@ -27,34 +26,43 @@ require 'colorize'
     puts "-" * @title.length
     puts @title
     puts "-" * @title.length
-			@items.each_with_index do |item, position|
-				puts "#{position + 1}) #{item.details}" 
-			end
-		end
-	def filter(item_type)
-		rows = []   
 		@items.each_with_index do |item, position|
-			rows << [position + 1, item.details] if (item.details).match("Type: #{item_type}")
+			puts "#{position + 1}) #{item.details}" 
 		end
-		table = Terminal::Table.new  :title => @title, :headings => ['Item #', 'Item Info'], :rows => rows
-		puts table		
+	end
+	def title_printer
+    puts "-" * @title.length
+    puts @title
+    puts "-" * @title.length	
+	end
+	def filter(item_type)
+		title_printer
+		@items.each_with_index do |item, position|
+			puts "#{position + 1}) #{item.details}" if (item.details).match("Type: #{item_type}")
+		end
+	end
+	def filter_by_priority(user_specified_priority)
+		title_printer
+		priority = "3" if user_specified_priority == "high"
+		priority = "2" if user_specified_priority == "medium"
+		priority = "1" if user_specified_priority == "low"
+		@items.each_with_index do |item, position|
+			puts "#{position + 1}) #{item.details}" if (item.details).match("Priority: #{priority}")
+		end
 	end
   def all_professional_looking_table				
 		rows = []   
-		table = Terminal::Table.new :title => @title, :headings => ['Description', 'something'], :rows => rows		
+		priority_color = "white"
+		table = Terminal::Table.new :title => @title.colorize(:cyan), :rows => rows		
 		@items.each_with_index do |item, position|
-			row_hash = item.details_for_table							
-			rows << 
-			[(position + 1).to_s.colorize(:magenta), 
-				row_hash[:description].colorize(:green), 
-				row_hash[:type].colorize(:cyan), 
-				(row_hash[:event_dates] || row_hash[:due]),
-				row_hash[:priority],
-				row_hash[:site_name]
-			]			
-			table.headings = ['Item #'.colorize(:magenta), 'Description'.colorize(:green), 'Type'.colorize(:cyan), 'Dates', 'Priority', 'Site Name']
-			table.rows = rows
+			row_hash = item.details_for_table
+			priority_color = "red" if row_hash[:priority] == "3"
+			priority_color = "magenta" if row_hash[:priority] == "2"
+			priority_color = "blue" if row_hash[:priority] == "1"			
+			rows << [(position + 1).to_s.colorize(:magenta), row_hash[:description].colorize(:green), row_hash[:type].colorize(:cyan), (row_hash[:event_dates].to_s.colorize(:magenta) || row_hash[:due].to_s.colorize(:magenta)),row_hash[:priority].to_s.colorize(priority_color.to_s),row_hash[:site_name].to_s.colorize(:green)]			
 		end
+		table.headings = ['Item #', 'Description', 'Type', 'Dates', 'Priority', 'Site Name']
+		table.rows = rows
 		puts table		
   end
 end
