@@ -18,11 +18,12 @@ class TodoItem
 		"Priority: " + format_priority(@priority).to_s.colorize(:red)
 	end
 	def details_for_table
-		return {description: format_description(@description).to_s,
-						type:	@type,
-						due: format_date(due_date: @due).to_s,
-						priority: format_priority(@priority).to_s.colorize(:red)
-					 }			
+		return {
+			description: format_description(@description).to_s,
+			type:	@type,
+			due: format_date(due_date: @due).to_s,
+			priority: format_priority(@priority).to_s.colorize(:red)
+		}			
 	end
 
 end

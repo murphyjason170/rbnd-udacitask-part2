@@ -1,13 +1,25 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+I used the terminal-table gem to make a good looking table. 
+
 2. Describe the 2 features you added to the project.
-  a) Feature 1...
-  b) Feature 2...
+  a) Feature 1 is the all_professional_looking_table method which prints out a table
+  b) Feature 2 is the filter_by_priority method which allows the user to view items by indicating a priority
 
 # REFLECTIONS
 # -------------------------------------------------------
 1. How long did you spend working on this project?
+I tried to slow down and enjoy the process this time instead of "sprinting" through it. I put good music on the headphones and tried to make it
+fun over a five day period versus "get this done now"
+
 2. What was the most rewarding challenge you conquered?
+Using the terminal-table gem and learning how to use it and successfully printing out the various items was rewarding.
+
 3. What two additional features did you build? Why?
+I built the professional table output for aesthetics. I built the filter by priority for usability enhancement.
+
 4. Where do you still have room to grow?
+In various ways - learning the actual Ruby language. I can tell you I enjoy the Ruby community on the Internet (and on Udacity!). 
+The many contributors out there don't seem to be as old-school jaded as you might find in other languages. Enjoying it!
+
