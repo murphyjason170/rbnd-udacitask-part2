@@ -22,17 +22,17 @@ require 'colorize'
 		raise UdaciListErrors::IndexExceedsListSize, "'#{index}' is not a valid index." if index > @items.size			
 		@items.delete_at(index - 1)		
   end
-	def title_printer
-    puts "-" * @title.length
-    puts @title
-    puts "-" * @title.length	
-	end  
 	def all	
 		title_printer
 		@items.each_with_index do |item, position|
 			puts "#{position + 1}) #{item.details}" 
 		end
 	end
+	def title_printer
+    puts "-" * @title.length
+    puts @title
+    puts "-" * @title.length	
+	end  
 	def filter(item_type)
 		title_printer
 		@items.each_with_index do |item, position|

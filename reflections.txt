@@ -11,7 +11,7 @@ I used the terminal-table gem to make a good looking table.
 # -------------------------------------------------------
 1. How long did you spend working on this project?
 I tried to slow down and enjoy the process this time instead of "sprinting" through it. I put good music on the headphones and tried to make it
-fun over a five day period versus "get this done now"
+fun over a week versus "get this done now"
 
 2. What was the most rewarding challenge you conquered?
 Using the terminal-table gem and learning how to use it and successfully printing out the various items was rewarding.
